@@ -10,8 +10,11 @@ public class Main {
             }
             for(int k=i;k<n ;k++){
                 System.out.print(ch+" ");
-                if(ch = 'Z') ch = 'A';
-                else ch++;
+                if(ch = 'Z'){
+                    ch = 'A';
+                }else{
+                    ch++;
+                }
             }
             System.out.println();
         }
