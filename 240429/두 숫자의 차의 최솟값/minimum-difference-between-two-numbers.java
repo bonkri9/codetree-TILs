@@ -9,14 +9,9 @@ public class Main {
             num[i] = sc.nextInt();
         }
 
-        int min = 100;
-        for(int i=0;i<n;i++){
-            for(int j=i;j<n;j++){
-                if(i<j){
-                    int diff = num[j] - num[i];
-                    if(min > diff) min = diff;
-                }
-            }
+        int min = num[1] - num[0];
+        for(int i=2;i<n;i++){
+            if(min > num[i] - num[i-1]) min = num[i] - num[i-1];
         }
 
         System.out.print(min);
