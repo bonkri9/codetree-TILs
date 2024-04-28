@@ -6,18 +6,19 @@ public class Main {
         int b = sc.nextInt();
         int[] num = new int[1001];
 
-        while(a>0){
+        while(a>1){
             int rest = a % b;
             num[rest]++;
             a /= b;
         }
 
         int ans = 0;
-        for(int i=0;i<num.length;i++){
+        for(int i=0;i<=1000;i++){
             if(num[i] != 0){
                 ans += num[i] * num[i];
             }
         }
+
         
         System.out.print(ans);
     }
