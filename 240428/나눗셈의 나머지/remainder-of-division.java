@@ -4,22 +4,18 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
         int b = sc.nextInt();
-        int[] num = new int[1001];
+        int[] num = new int[10];
+        int ans = 0;
 
         while(a>1){
-            int rest = a % b;
-            num[rest]++;
+            num[a % b]++;
             a /= b;
         }
 
-        int ans = 0;
-        for(int i=0;i<=1000;i++){
-            if(num[i] != 0){
-                ans += num[i] * num[i];
-            }
+        for(int i=0;i<b;i++){
+            ans += num[i] * num[i];
         }
 
-        
         System.out.print(ans);
     }
 }
