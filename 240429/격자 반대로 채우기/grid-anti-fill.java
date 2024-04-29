@@ -7,7 +7,7 @@ public class Main {
         int cnt = 1;
 
         for(int i=n-1;i>=0;i--){
-            if(i%2==1){
+            if((n-i)%2==1){
                 for(int j=n-1;j>=0;j--){
                     map[j][i] = cnt++;
                 }
