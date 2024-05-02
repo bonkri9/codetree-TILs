@@ -20,7 +20,6 @@ public class Main {
             }
         }
 
-        System.out.print(cnt + " ");
-        System.out.printf("%.2f", sumOfLength/cnt);
+        System.out.printf("%d %.2f", cnt, sumOfLength / cnt);
     }
 }
