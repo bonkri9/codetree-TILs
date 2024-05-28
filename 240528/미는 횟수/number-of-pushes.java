@@ -8,16 +8,16 @@ public class Main {
         int cnt = 0;
 
         while(true){
-            cnt++;
-            if(cnt==B.length()-1){
-                System.out.print(-1);
-                break;
-            }
 
+            cnt++;
             B = B.charAt(lenB-1) + B.substring(0,lenB-1);
-            
+
             if(A.equals(B)){
                 System.out.print(cnt);
+                break;
+            }
+            if(cnt==B.length()){
+                System.out.print(-1);
                 break;
             }
         }
