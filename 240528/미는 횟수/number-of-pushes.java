@@ -4,19 +4,19 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String A = sc.next();
         String B = sc.next();
-        int lenB = B.length();
+        int lenA = A.length();
         int cnt = 0;
 
         while(true){
 
             cnt++;
-            B = B.charAt(lenB-1) + B.substring(0,lenB-1);
+            A = A.charAt(lenA-1) + A.substring(0,lenA-1);
 
             if(A.equals(B)){
                 System.out.print(cnt);
                 break;
             }
-            if(cnt==B.length()){
+            if(cnt==A.length()){
                 System.out.print(-1);
                 break;
             }
