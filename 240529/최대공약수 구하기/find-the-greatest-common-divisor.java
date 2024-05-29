@@ -12,13 +12,9 @@ public class Main {
             big = m;
         }
         
-        for(int i=1;i<=small/2;i++){
-            if(small==big){
-                ans = small;
-                break;
-            }
+        for(int i=1;i<=small;i++){
             if(small%i==0 && big%i==0){
-                ans = i;
+                if(i > ans) ans = i;
             }else{
                 continue;
             }
