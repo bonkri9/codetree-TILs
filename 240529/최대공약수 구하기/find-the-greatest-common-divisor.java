@@ -13,6 +13,10 @@ public class Main {
         }
         
         for(int i=1;i<=small/2;i++){
+            if(small==big){
+                ans = small;
+                break;
+            }
             if(small%i==0 && big%i==0){
                 ans = i;
             }else{
