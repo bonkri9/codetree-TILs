@@ -1,7 +1,7 @@
 import java.util.*;
 public class Main {
     public static void findNum(int n, int m){
-        int ans = 0;
+        int ans = 1;
         int small = 1;
         int big = 1;
         if(n>=m){
