@@ -1,15 +1,15 @@
 import java.util.*;
 public class Main {
     public static void findLcm(int n, int m){
-        int gcm = 1;
+        int gcd = 1;
 
         for(int i=1;i<=Math.min(n,m);i++){
             if(n%i==0 && m%i==0){
-                gcm = i;
+                gcd = i;
             }
         }
 
-        int lcm = n*m/gcm;
+        int lcm = n*m/gcd;
         System.out.print(lcm);
 
     }
