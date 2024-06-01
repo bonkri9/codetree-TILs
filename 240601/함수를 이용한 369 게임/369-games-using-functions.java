@@ -6,16 +6,13 @@ public class Main {
     }
 
     public static boolean isSubCheck(int num){
-        boolean isRight = false;
-        while(num>=1){
-            int rest = num%10;
-            if(rest==3 || rest==6 || rest==9){
-                isRight = true;
-                break;
+        while(num > 0){
+            if(num%10==3 || num%10==6 || num%10==9){
+                return true;
             }
             num /= 10;
         }
-        return isRight;
+        return false;
     }
 
     public static void main(String[] args) {
