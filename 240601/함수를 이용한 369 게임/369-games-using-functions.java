@@ -7,7 +7,7 @@ public class Main {
 
     public static boolean isSubCheck(int num){
         boolean isRight = false;
-        while(num%10!=0){
+        while(num>=1){
             int rest = num%10;
             if(rest==3 || rest==6 || rest==9){
                 isRight = true;
