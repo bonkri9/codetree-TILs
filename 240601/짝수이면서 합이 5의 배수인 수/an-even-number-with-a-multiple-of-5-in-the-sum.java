@@ -1,9 +1,7 @@
 import java.util.*;
 public class Main {
     public static boolean isCheck(int n){
-        int sum = (n%10) + (n/10);
-        if(n%2==0 && sum%5==0) return true;
-        else return false;
+        return n%2==0 && ((n/10) + (n%10))%5==0;
     }
 
     public static void main(String[] args) {
