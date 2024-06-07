@@ -25,14 +25,19 @@ public class Main {
         int ans = 0;
         if(o.equals("+")){
             ans = calPlus(a, c);
+            System.out.print(a+" "+o+" "+c+" = "+ans);
         }else if(o.equals("-")){
             ans = calMinus(a, c);
+            System.out.print(a+" "+o+" "+c+" = "+ans);
         }else if(o.equals("/")){
             ans = calDivide(a, c);
+            System.out.print(a+" "+o+" "+c+" = "+ans);
         }else if(o.equals("*")){
             ans = calMultiple(a, c);
+            System.out.print(a+" "+o+" "+c+" = "+ans);
+        }else{
+            System.out.print("False");
         }
 
-        System.out.print(a+" "+o+" "+c+" = "+ans);
     }
 }
