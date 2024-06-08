@@ -25,7 +25,13 @@ public class Main {
         }
 
         int repeat = n1 - n2 + 1;
+        if(n1 < n2) repeat = 100;
+
         for(int i=0;i<repeat;i++){
+            if(n1 < n2){
+                System.out.print("No");
+                break;
+            }
             if(isContinue(i, n2, n1Arr, n2Arr)){
                 System.out.print("Yes");
                 break;
