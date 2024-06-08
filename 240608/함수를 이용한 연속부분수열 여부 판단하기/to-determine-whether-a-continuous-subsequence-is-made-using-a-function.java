@@ -1,21 +1,34 @@
 import java.util.*;
 public class Main {
-    public static boolean isContinue(int curr, int n2, int[] n1Arr, int[] n2Arr){
+    public static final int MAX = 100;
+
+    public static int n1, n2;
+    public static int[] n1Arr = new int[MAX];
+    public static int[] n2Arr = new int[MAX];
+
+    // 해당 숫자가 같은 지 판단하는 함수
+    public static boolean isSame(int curr){
         for(int i=0;i<n2;i++){
-            if(n1Arr[i + curr] != n2Arr[i]){
+            if(n1Arr[i + curr] != n2Arr[i])
                 return false;
-            }
-        }
+        }   
         return true;
     }
 
+    // 연속 수열인 지 판단하는 함수
+    public static boolean isSubsequence(){
+        for(int i=0;i<=n1 - n2;i++){
+            if(isSame(i)) 
+                return true;
+        }
+        return false;
+    }
+
+    // 숫자 및 배열 입력 받고 최종으로 나올 Yes, No만 판가름
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n1 = sc.nextInt();
-        int n2 = sc.nextInt();
-
-        int[] n1Arr = new int[n1];
-        int[] n2Arr = new int[n2];
+        n1 = sc.nextInt();
+        n2 = sc.nextInt();
 
         for(int i=0;i<n1;i++){
             n1Arr[i] = sc.nextInt();
@@ -24,21 +37,10 @@ public class Main {
             n2Arr[i] = sc.nextInt();
         }
 
-        int repeat = n1 - n2 + 1;
-        if(n1 < n2) repeat = 100;
-
-        for(int i=0;i<repeat;i++){
-            if(n1 < n2){
-                System.out.print("No");
-                break;
-            }
-            if(isContinue(i, n2, n1Arr, n2Arr)){
-                System.out.print("Yes");
-                break;
-            }else if(i == repeat - 1){
-                System.out.print("No");
-            }
+        if(isSubsequence()){
+            System.out.print("Yes");
+        }else{
+            System.out.print("No");
         }
-
     }
 }
