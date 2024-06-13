@@ -1,23 +1,19 @@
 import java.util.*;
 public class Main {
-    public static String reverse(String str){
-        int strLen = str.length();
-        String revStr = "";
-
-        for(int i=strLen-1;i>=0;i--){
-            revStr += str.substring(i,i+1);
+    public static boolean isPalindrome(String str){
+        for(int i=0;i<str.length();i++){
+            if(str.charAt(i) != str.charAt(str.length() - 1 - i)){
+                return false;
+            }
         }
-
-        return revStr;
+        return true;
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String str = sc.next();
 
-        String revStr = reverse(str);
-
-        if(str.equals(revStr)){
+        if(isPalindrome(str)){
             System.out.print("Yes");
         }else{
             System.out.print("No");
