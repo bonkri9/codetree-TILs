@@ -2,7 +2,9 @@ import java.util.*;
 public class Main {
     public static void absolute(int[] arr){
         for(int i=0;i<arr.length;i++){
-            System.out.print(Math.abs(arr[i]) + " ");
+            if(arr[i]<0){
+                arr[i] = -arr[i];
+            }
         }
     }
 
@@ -16,5 +18,9 @@ public class Main {
         }
 
         absolute(arr);
+
+        for(int i=0;i<n;i++){
+            System.out.print(arr[i] + " ");
+        }
     }
 }
