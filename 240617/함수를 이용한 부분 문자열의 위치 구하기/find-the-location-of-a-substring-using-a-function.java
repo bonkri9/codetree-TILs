@@ -1,4 +1,6 @@
 import java.util.*;
+import java.io.*;
+
 public class Main {
     public static String text, pattern;
 
@@ -43,11 +45,11 @@ public class Main {
         return -1;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         // 변수 선언 및 입력
-        Scanner sc = new Scanner(System.in);
-        text = sc.next();
-        pattern = sc.next();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        text = br.readLine();
+        pattern = br.readLine();
 
         // return된 인덱스 출력
         System.out.print(findIdx());
