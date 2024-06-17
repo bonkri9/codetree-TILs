@@ -7,7 +7,7 @@ public class Main {
 
     public static int plusByCon(){
         int sum = 0;
-        for(int i=1;i<=n;i++){
+        while(m >= 1){
 
             sum += nums[m];
 
@@ -17,19 +17,21 @@ public class Main {
                 m -= 1;
             }
 
-            if(m == 0) break;
         }
 
         return sum;
     }
 
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        n = sc.nextInt();
-        m = sc.nextInt();
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        n = Integer.parseInt(st.nextToken());
+        m = Integer.parseInt(st.nextToken());
+
         nums = new int[n+1];
+        st = new StringTokenizer(br.readLine(), " ");
         for(int i=1;i<n;i++){
-            nums[i] = sc.nextInt();
+            nums[i] = Integer.parseInt(st.nextToken());
         }
 
         System.out.print(plusByCon());
