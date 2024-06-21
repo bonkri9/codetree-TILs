@@ -1,4 +1,6 @@
 import java.util.*;
+import java.io.*;
+
 public class Main {
     public static void printStar(int n){
         if(n==0) return;
@@ -10,9 +12,9 @@ public class Main {
         System.out.println();
     }
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
         printStar(n);
     }
 }
