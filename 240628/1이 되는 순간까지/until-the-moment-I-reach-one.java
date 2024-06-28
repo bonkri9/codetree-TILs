@@ -2,21 +2,32 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-    public static int cnt = 0;
-    public static int calNum(int num){
+    // public static int cnt = 0;
+    // public static int calNum(int num){
+    //     if(num == 1){
+    //         return cnt;
+    //     }
 
+    //     if(num % 2 == 0){
+    //         num /= 2;
+    //         cnt++;
+    //         return calNum(num);
+    //     }else{
+    //         num /= 3;
+    //         cnt++;
+    //         return calNum(num);
+    //     }
+    // }
+
+    public static int calNum(int num){
         if(num == 1){
-            return cnt;
+            return 0;
         }
 
-        if(num % 2 == 0){
-            num /= 2;
-            cnt++;
-            return calNum(num);
+        if(num % 2 == 0 ){
+            return calNum(num / 2) + 1;
         }else{
-            num /= 3;
-            cnt++;
-            return calNum(num);
+            return calNum(num / 3) + 1;
         }
     }
 
