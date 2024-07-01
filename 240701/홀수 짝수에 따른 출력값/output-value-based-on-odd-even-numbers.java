@@ -13,6 +13,6 @@ public class Main {
         int n = Integer.parseInt(br.readLine());
 
         System.out.print(sumNum(n));
-
+        br.close();
     }
 }
