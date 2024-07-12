@@ -26,13 +26,13 @@ public class Main {
             st = new StringTokenizer(br.readLine());
             String command = st.nextToken();
 
-            if(command.equals("L")){
+            if(command.equals("L") && it.hasPrevious()){
                 it.previous();
-            }else if(command.equals("R")){
+            }else if(command.equals("R") && it.hasNext()){
                 it.next();
             }else if(command.equals("P")){
                 it.add(st.nextToken());
-            }else{
+            }else if(command.equals("D") && it.hasNext()){
                 it.next();
                 it.remove();
             }
