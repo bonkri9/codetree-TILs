@@ -10,8 +10,8 @@ public class Main {
     public static int[] arr = new int[MAX_N];
 
     public static void radixSort(){
+        int point = 1; // 자릿수
         for(int pos = 0; pos <= MAX_K; pos++){
-            int point = 1; // 자릿수
 
             // 생성 및 초기화
             ArrayList<Integer>[] arrNew = new ArrayList[MAX_DIGIT];
