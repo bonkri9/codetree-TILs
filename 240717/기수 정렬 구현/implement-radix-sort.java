@@ -2,38 +2,36 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-    public static int n, pos;
-    public static int[] arr;
+    public static final int MAX_N = 100000;
+    public static final int MAX_K = 6;
+    public static final int MAX_DIGIT = 10;
+    
+    public static int n;
+    public static int[] arr = new int[MAX_N];
 
     public static void radixSort(){
-        for(pos = 1; pos <= 6; pos++){
+        for(int pos = 0; pos <= MAX_K; pos++){
+            int point = 1; // 자릿수
 
             // 생성 및 초기화
-            ArrayList<Integer>[] arr_new = new ArrayList[10];
-            for(int i=0;i<arr_new.length;i++){
-                arr_new[i] = new ArrayList<Integer>();
+            ArrayList<Integer>[] arrNew = new ArrayList[MAX_DIGIT];
+            for(int i=0;i<MAX_DIGIT;i++){
+                arrNew[i] = new ArrayList<>();
             }
 
             for(int i=0;i<n;i++){
-                int tmp = arr[i];
-                for(int j=1;j<pos;j++){
-                    tmp /= 10;
-                }
-                int digit = tmp % 10;
-                arr_new[digit].add(arr[i]);
+                int digit = (arr[i] / point) % 10;
+                arrNew[digit].add(arr[i]);
             }
 
-            int[] store_arr = new int[n];
             int idx = 0;
-            for(int i=0;i<arr_new.length;i++){
-                for(int j=0;j<arr_new[i].size();j++){
-                    store_arr[idx] = arr_new[i].get(j);
-                    idx++;
+            for(int i=0;i<MAX_DIGIT;i++){
+                for(int j=0;j<arrNew[i].size();j++){
+                    arr[idx++] = arrNew[i].get(j);
                 }
             }
 
-            arr = store_arr;
-
+            point *= 10;
         }
     }
 
@@ -43,14 +41,10 @@ public class Main {
 
         n = Integer.parseInt(br.readLine());
 
-        arr = new int[n];
         st = new StringTokenizer(br.readLine());
         for(int i=0;i<n;i++){
             arr[i] = Integer.parseInt(st.nextToken());
-        }
-
-        // pos는 자릿수, 문제에서 원소값의 최대 자릿수는 6
-        pos = 6;
+        }// 입력 끝
 
         radixSort();
 
