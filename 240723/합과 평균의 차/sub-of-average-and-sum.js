@@ -6,7 +6,7 @@ let b = Number(input[1]);
 let c = Number(input[2]);
 
 let sum = a + b + c;
-let avg = (a + b + c) / 3;
+let avg = parseInt((a + b + c) / 3);
 let minus = sum - avg;
 
 console.log(sum);
