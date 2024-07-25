@@ -10,5 +10,5 @@ for(let i = a; i <= b; i++){
         satisfied = true;
 }
 
-if(satisfied) console.log(1);
+if(satisfied === true) console.log(1);
 else console.log(0);
