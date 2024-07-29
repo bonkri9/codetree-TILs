@@ -8,7 +8,8 @@ for(let i=0;i<n;i++){
     for(let j=0;j<n;j++){
         str += alpha;
         let index = alpha.charCodeAt();
-        alpha = String.fromCharCode(index++);
+        index++;
+        alpha = String.fromCharCode(index);
     }
     str += "\n";
 }
