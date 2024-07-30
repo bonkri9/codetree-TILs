@@ -3,11 +3,15 @@ let n = Number(fs.readFileSync(0).toString().trim());
 
 let str = "";
 for(let i=1;i<=n;i++){
-    let cnt = 0;
-    for(let j=n;j>=1;j--){
-        if(i%j===0) cnt++;
+    if(i===1) continue;
+
+    let isPrime = true;
+
+    for(let j=2;j<i;j++){
+        if(i%j===0) isPrime = false;
     }
-    if(cnt===2) str += i + " ";
+
+    if(isPrime) str += i + " ";
 }
 
 console.log(str);
